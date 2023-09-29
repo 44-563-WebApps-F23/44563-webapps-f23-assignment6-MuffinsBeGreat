@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <title>Author Form</title>
+ <header>Author Entry Casey</header>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="auth_name">The hidden author name</label>
+    <input type="password" id="auth_name" name="auth_name" value="Dickens"> <br>
+
+    <label for="guess_auth">Guess the author</label>
+    <input type="text" id="guess_auth" name="guess_auth"> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced</p>
+
+<script> 
+
+good = 0
+oops = 0
+
+function checkAuthor(){
+    author = document.getElementById("auth_name").value
+    guess = document.getElementById("guess_auth").value
+
+    out = document.getElementById("result")
+    if(guess == author){
+        good++
+        alert("You got it right")
+    } else {
+        oops++
+        alert("Sorry")
+    }
+    out.innerHTML = "Good: " + good + ", Oops: " + oops
+}
+</script>
+
+</body>
+</html> 
