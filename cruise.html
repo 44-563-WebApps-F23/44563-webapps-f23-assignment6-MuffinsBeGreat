@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Cruise</title>
+<header>Casey Wormington goes on a cruise</header>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <input type="checkbox" id="cabin" name="cruise"   
+      value="True" checked>
+    <label for="cb1_cheese">Shares Cabin</label></br>
+  
+    <input type="checkbox" id="breakfast" name="breakfast" 
+       value="True">
+    <label for="cb1_olive">Breakfast</label></br>
+  
+    <input type="checkbox" id="pool" name="pool"   
+       value="False" checked>
+    <label for="cb1_onion">Pool Pass</label></br>
+
+    <input type="button" onclick="selectCruise()" value="Show tip">
+  </form>
+
+
+<p id="result">To be replaced</p>
+
+<script> 
+my_cruise = {}
+
+function selectCruise() {
+    cabin = document.getElementById("cabin").checked
+    breakfast = document.getElementById("breakfast").checked
+    pool = document.getElementById("pool").checked
+    my_cruise = {}
+    if(cabin) {
+        my_cruise[cabin] = True
+    }
+    if(breakfast) {
+        my_cruise[breakfast] = True
+    }
+    if(pool) {
+        my_cruise[pool] = True
+    }
+    out = document.getElementById("result")
+    out.innerHTML = "Cabin: " + my_cruise[cabin] + "<br>Breakfast: " + my_cruise[breakfast] + "<br>Pool: " + my_cruise[pool]
+}
+
+function updateCruise() {
+    days = document.getElementById("days").value
+    price = document.getElementById("price").value
+
+    my_cruise[days] = days
+    my_cruise[price] = price
+
+    out = document.getElementById("result")
+    out.innerHTML += "<br>Days: " + my_cruise[days] + "<br>Price: " + my_cruise[price]
+}
+</script>
+
+<form>
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" name="days" value="days"><br>
+
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"><br>
+
+    <input type="button" id="update" onclick="updateCruise()" value="Update the cruise">
+</form>
+
+</body>
+</html> 
