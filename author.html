@@ -40,5 +40,31 @@ function checkAuthor(){
 }
 </script>
 
+<div>
+    <img src="jersey2.jpg" id="image" alt="An Image" style="width: 100px;height: 100px;" onclick="selectImage()">
+    <script>
+        useImage = 1
+
+        function selectImage(){
+            switch(useImage) {
+                case 1:
+                    document.getElementById('image').src="ohio-edited.jpg";
+                    useImage = 2
+                    break;
+                case 2:
+                    document.getElementById('image').src="Above_Gotham.jpg";
+                    useImage = 3
+                    break;
+                case 3:
+                    document.getElementById('image').src="jersey2.jpg";
+                    useImage = 1
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</div>
+
 </body>
 </html> 
