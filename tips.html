@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Some Tips</title>
+<header>Casey Wormington shows tip amounts</header>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="base">Enter base amount</label>
+    <input type="number" id="base" name="base"> <br>
+
+    <label for="conversion">Enter the tip percent</label>
+    <input type="number" id="conversion" name="conversion" value="15"> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function tips(){
+    baseValue = parseFloat(document.getElementById("base").value)
+    percentage = parseFloat(document.getElementById("conversion").value)
+    myOutput = ""
+
+    for(let x = 0; x <= 16; x+=4) {
+        myOutput += percentage + x + "% is " + (((percentage + x) / 100) * baseValue).toPrecision(2) + "; "
+    }
+
+    out = document.getElementById("result")
+    out.innerHTML = "Tips are: " + myOutput
+}
+</script>
+
+</body>
+</html> 
