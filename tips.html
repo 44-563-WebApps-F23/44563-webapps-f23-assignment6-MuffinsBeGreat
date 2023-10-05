@@ -33,6 +33,41 @@ function tips(){
     out.innerHTML = "Tips are: " + myOutput
 }
 </script>
+<br><br>
+<p id="radios">This will be replaced</p>
+
+<form>
+    <label for="sum">Sum</label>
+    <input type="radio" id="sum" name="maths" value="sum" checked onclick="chooseOp()"><br>
+
+    <label for="diff">Diff</label>
+    <input type="radio" id="diff" name="maths" value="diff" onclick="chooseOp()"><br>
+
+    <label for="mult">Mult</label>
+    <input type="radio" id="mult" name="maths" value="mult" onclick="chooseOp()"><br>
+</form>
+
+<script>
+function chooseOp() {
+    baseValue = parseInt(document.getElementById("base").value)
+    percentage = parseInt(document.getElementById("conversion").value)
+    
+    sum = document.getElementById("sum").checked
+    diff = document.getElementById("diff").checked
+    mult = document.getElementById("mult").checked
+    
+    leave = document.getElementById("radios")
+    if(sum) {
+        leave.innerHTML = "Sum of " + baseValue + " and " + percentage + " is " + (baseValue + percentage)
+    }
+    if(diff) {
+        leave.innerHTML = "Difference of " + baseValue + " and " + percentage + " is " + (baseValue / percentage)
+    }
+    if(mult) {
+        leave.innerHTML = "Product of " + baseValue + " and " + percentage + " is " + (baseValue * percentage)
+    }
+}
+</script>
 
 </body>
 </html> 
